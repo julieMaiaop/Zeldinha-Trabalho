@@ -308,9 +308,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 32504fdabe2264d48ada84f86f75c26b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d9b6240d14c47f1458bf56a15ba25345, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.433
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -963,8 +963,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Zeldinha
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 499ca3210a55e9f4a92c69b330e00e96, type: 2}
-  m_sharedMaterial: {fileID: 1631359729688264540, guid: 499ca3210a55e9f4a92c69b330e00e96, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fba5469749cb5484db76e020bfc8d645, type: 2}
+  m_sharedMaterial: {fileID: 505515756858898299, guid: fba5469749cb5484db76e020bfc8d645, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

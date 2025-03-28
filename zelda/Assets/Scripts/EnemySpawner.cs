@@ -1,33 +1,50 @@
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
-    private Transform playerTarget; // Nova variável para evitar conflito
-    public float speed2 = 2f;
-    public float maxDistance = 10f;
+    public GameObject enemyPrefab; // Prefab do inimigo a ser instanciado
+    public Transform[] spawnPoints; // Array de pontos de spawn
+    public int maxEnemies = 20; // Quantidade máxima de inimigos permitidos
+    public float spawnInterval = 5f; // Intervalo entre os spawns em segundos
 
-    private Vector2 spawnPoint;
+    private int currentEnemyCount = 0; // Contador de inimigos na cena
 
     private void Start()
     {
-        spawnPoint = transform.position;
-        playerTarget = GameObject.FindGameObjectWithTag("Player").transform; // Encontra o jogador
+        // Verifica se há pelo menos 5 pontos de spawn configurados
+        if (spawnPoints.Length < 5)
+        {
+            Debug.LogError("É necessário configurar pelo menos 5 pontos de spawn no array de spawnPoints!");
+            return;
+        }
+
+        // Inicia o ciclo de spawn
+        InvokeRepeating(nameof(SpawnEnemy), 0f, spawnInterval);
     }
 
-    private void Update()
+    private void SpawnEnemy()
     {
-        if (playerTarget == null) return;
+        // Verifica se já há o número máximo de inimigos na cena
+        if (currentEnemyCount >= maxEnemies) return;
 
-        float distanceFromSpawn = Vector2.Distance(transform.position, spawnPoint);
+        // Seleciona um ponto de spawn aleatório
+        Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
-        if (distanceFromSpawn < maxDistance)
+        // Instancia o inimigo no ponto de spawn selecionado
+        Instantiate(enemyPrefab, randomSpawnPoint.position, Quaternion.identity);
+
+        // Incrementa o contador de inimigos
+        currentEnemyCount++;
+    }
+
+    public void EnemyDestroyed()
+    {
+        // Método para ser chamado quando um inimigo é destruído
+        if (currentEnemyCount > 0)
         {
-            transform.position = Vector2.MoveTowards(transform.position, playerTarget.position, speed2 * Time.deltaTime);
-        }
-        else
-        {
-            Debug.Log("Inimigo atingiu a distância máxima e parou.");
+            currentEnemyCount--;
         }
     }
 }
+
 

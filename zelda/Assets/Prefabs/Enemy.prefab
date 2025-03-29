@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2155
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,7 +151,6 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 50
   maxHealth: 50
-  player: {fileID: 4084614915347758238, guid: 607f45d3544330e47a95476ba5d33bfe, type: 3}
 --- !u!114 &2768933847205087080
 MonoBehaviour:
   m_ObjectHideFlags: 0

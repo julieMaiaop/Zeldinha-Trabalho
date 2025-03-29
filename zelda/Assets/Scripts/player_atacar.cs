@@ -6,11 +6,13 @@ public class player_atacar : MonoBehaviour
     public float attackRange = 1f; // Alcance do ataque
     public int attackDamage = 20; // Dano do ataque
     public LayerMask enemyLayer; // Camada dos inimigos
+    public Animator playerAnimator; // Referência para o Animator
+    public string attackAnimationName = "Attack"; // Nome da animação de ataque
 
     void Update()
     {
-        // Detecta o comando de ataque
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Detecta o clique do botão esquerdo do mouse
+        if (Input.GetMouseButtonDown(0))
         {
             Attack();
         }
@@ -18,6 +20,16 @@ public class player_atacar : MonoBehaviour
 
     void Attack()
     {
+        // Ativa a animação de ataque
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetTrigger(attackAnimationName);
+        }
+        else
+        {
+            Debug.LogWarning("Animator não encontrado no jogador!");
+        }
+
         // Detecta inimigos dentro do alcance do ataque
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
@@ -53,4 +65,3 @@ public class player_atacar : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
-

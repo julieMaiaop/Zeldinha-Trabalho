@@ -9,16 +9,37 @@ public class EnemyAttack : MonoBehaviour
 
     private float lastAttackTime = 0f; // Tempo do último ataque
     private int currentHealth;        // Vida atual
-
-    public Transform player; // Referência para o jogador
+    private Transform player;         // Referência para o jogador
 
     void Start()
     {
         currentHealth = maxHealth; // Inicializa a vida do inimigo
+        FindPlayer();
+
+        if (player == null)
+        {
+            Debug.LogWarning("Jogador não encontrado inicialmente, tentando novamente...");
+            InvokeRepeating(nameof(FindPlayer), 0, 1f); // Tenta a cada 1 segundo
+            enabled = false;
+        }
+    }
+
+    void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+            CancelInvoke(nameof(FindPlayer));
+            enabled = true;
+            Debug.Log("Jogador encontrado com sucesso!");
+        }
     }
 
     void Update()
     {
+        if (player == null) return;
+
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             if (Time.time - lastAttackTime >= attackCooldown)
@@ -31,17 +52,21 @@ public class EnemyAttack : MonoBehaviour
 
     void Attack()
     {
-        // Verifique se o jogador está dentro do alcance e aplique dano
         Collider2D hit = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
 
         if (hit != null)
         {
-            // Aplica dano ao jogador
-            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>(); // Pegando o script PlayerHealth do jogador
+            Debug.Log("Jogador atingido!");
+            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
 
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(attackDamage); // Aplica o dano
+                playerHealth.TakeDamage(attackDamage);
+                Debug.Log("Dano aplicado ao jogador: " + attackDamage);
+            }
+            else
+            {
+                Debug.LogWarning("Componente PlayerHealth não encontrado no jogador!");
             }
         }
     }
@@ -58,16 +83,13 @@ public class EnemyAttack : MonoBehaviour
 
     void Die()
     {
-        // A lógica para a morte do inimigo
         Debug.Log("Inimigo morreu!");
-        Destroy(gameObject); // Destroi o objeto inimigo
+        Destroy(gameObject);
     }
 
-    // Opcional: visualizar a área de ataque no editor para debug
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
-

@@ -36,9 +36,9 @@ public class EnemyFollow : MonoBehaviour
         }
         else
         {
-            // Move o inimigo de volta ao ponto de spawn
+            
             transform.position = Vector2.MoveTowards(transform.position, spawnPoint, speed2 * Time.deltaTime);
-            Debug.Log("Inimigo retornando ao ponto de spawn.");
+           
         }
     }
 }

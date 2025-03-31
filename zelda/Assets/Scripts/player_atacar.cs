@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class player_atacar : MonoBehaviour
 {
-    [Header("Ataque")]
+    
     public Transform attackPoint;
     public float attackRange = 1f;
     public int attackDamage = 20;
     public LayerMask enemyLayer;
     public float attackCooldown = 0.5f;
 
-    [Header("Movimento")]
+    
     public float moveSpeed = 5f;
     public float acceleration = 10f;
 
-    [Header("Esquiva")]
     public float dodgeSpeed = 15f;
     public float dodgeDuration = 0.3f;
     public float dodgeCooldown = 1f;
@@ -26,6 +25,8 @@ public class player_atacar : MonoBehaviour
     private float dodgeEndTime;
     private float nextDodgeTime;
 
+    public int danoBonus = 15;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,19 +34,19 @@ public class player_atacar : MonoBehaviour
 
     void Update()
     {
-        // Movimento
+        
         moveInput = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         ).normalized;
 
-        // Esquiva
+        
         if (Input.GetKeyDown(dodgeKey) && !isDodging && Time.time >= nextDodgeTime && moveInput != Vector2.zero)
         {
             StartDodge();
         }
 
-        // Ataque (botão esquerdo do mouse)
+       
         if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime && !isDodging)
         {
             Attack();
@@ -100,5 +101,19 @@ public class player_atacar : MonoBehaviour
         if (attackPoint == null) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.CompareTag("Espada"))
+        {
+            
+            attackDamage += danoBonus;
+
+            
+            Destroy(collision.gameObject);
+
+            Debug.Log("Espada coletada! Dano aumentado para: " + attackDamage);
+        }
     }
 }

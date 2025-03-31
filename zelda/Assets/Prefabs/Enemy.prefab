@@ -149,8 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 1.5
   attackCooldown: 1
-  attackDamage: 50
-  maxHealth: 50
+  attackDamage: 10
+  maxHealth: 80
 --- !u!114 &2768933847205087080
 MonoBehaviour:
   m_ObjectHideFlags: 0

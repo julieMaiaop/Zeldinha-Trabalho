@@ -13,12 +13,6 @@ public class EnemyFollow : MonoBehaviour
       
         spawnPoint = transform.position;
         playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-
-      
-        if (playerTarget == null)
-        {
-            Debug.LogError("Nenhum GameObject com a tag 'Player' foi encontrado!");
-        }
     }
 
     private void Update()

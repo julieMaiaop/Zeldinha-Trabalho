@@ -26,6 +26,7 @@ public class player_atacar : MonoBehaviour
     private float nextDodgeTime;
 
     public int danoBonus = 15;
+    public Sprite espada2;
 
     void Start()
     {
@@ -104,16 +105,19 @@ public class player_atacar : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.CompareTag("Espada"))
         {
-            
+
             attackDamage += danoBonus;
 
-            
+
             Destroy(collision.gameObject);
+
+            GetComponent<SpriteRenderer>().sprite = espada2;
 
             Debug.Log("Espada coletada! Dano aumentado para: " + attackDamage);
         }
     }
+
 }

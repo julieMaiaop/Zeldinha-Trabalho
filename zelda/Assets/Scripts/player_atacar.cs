@@ -26,7 +26,7 @@ public class player_atacar : MonoBehaviour
     private float nextDodgeTime;
 
     public int danoBonus = 15;
-    public Sprite espada2;
+   
 
     void Start()
     {
@@ -91,7 +91,6 @@ public class player_atacar : MonoBehaviour
                 if (enemyScript != null)
                 {
                     enemyScript.TakeDamage(attackDamage);
-                    Debug.Log("Dano causado: " + attackDamage);
                 }
             }
         }
@@ -113,10 +112,6 @@ public class player_atacar : MonoBehaviour
 
 
             Destroy(collision.gameObject);
-
-            GetComponent<SpriteRenderer>().sprite = espada2;
-
-            Debug.Log("Espada coletada! Dano aumentado para: " + attackDamage);
         }
     }
 

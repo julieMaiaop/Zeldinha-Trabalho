@@ -93905,7 +93905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7c1ddde42cb6e46b7c122b1f53f871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteNormal: {fileID: 21300000, guid: cf20f7e9bdbc8d246bbb7f4ed26c45e2, type: 3}
+  spriteNormal: {fileID: 21300000, guid: 86f1532fcc446894ca7597e1bbdd2265, type: 3}
   spriteMelhorada: {fileID: 21300000, guid: 86f1532fcc446894ca7597e1bbdd2265, type: 3}
   espada: {fileID: 852090598}
 --- !u!61 &852090601

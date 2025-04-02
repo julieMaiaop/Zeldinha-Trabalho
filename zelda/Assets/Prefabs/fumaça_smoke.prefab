@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 471940709282910963}
   - component: {fileID: 471940709282910972}
   - component: {fileID: 471940709282910973}
+  - component: {fileID: 1900652438243062390}
   m_Layer: 0
   m_Name: "fuma\xE7a_smoke"
   m_TagString: Smoke
@@ -101,3 +102,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1900652438243062390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471940709282910974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3176d74e44d8a2e478471182a1b7d4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageInterval: 2
+  damageAmount: 40

@@ -25,7 +25,7 @@ public class pegar_smoke : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-            smokeText.text = "Utilize Q para usar a granada";
+            smokeText.text = "Utilize Q para usar a granada de gás";
         }
     }
    

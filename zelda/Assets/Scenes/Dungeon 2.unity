@@ -317,7 +317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280597473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.4088, y: 8.0116415, z: 0.10579394}
+  m_LocalPosition: {x: 34.87, y: -18.79, z: 0.10579394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93869,8 +93869,8 @@ GameObject:
   m_Component:
   - component: {fileID: 852090599}
   - component: {fileID: 852090602}
-  - component: {fileID: 852090601}
   - component: {fileID: 852090600}
+  - component: {fileID: 852090603}
   m_Layer: 3
   m_Name: attack point
   m_TagString: Untagged
@@ -93908,32 +93908,6 @@ MonoBehaviour:
   spriteNormal: {fileID: 21300000, guid: 86f1532fcc446894ca7597e1bbdd2265, type: 3}
   spriteMelhorada: {fileID: 21300000, guid: 86f1532fcc446894ca7597e1bbdd2265, type: 3}
   espada: {fileID: 852090598}
---- !u!61 &852090601
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852090598}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.04802358, y: -0.062083542}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 5, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.3644876, y: 1.0956522}
-  m_EdgeRadius: 0
 --- !u!212 &852090602
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93986,6 +93960,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &852090603
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852090598}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 2.1200266, y: 1.1359316}
+  - {x: 2.1015089, y: 1.0669575}
+  - {x: 2.0445051, y: 1.0088412}
+  - {x: 1.9412402, y: 0.91572016}
+  - {x: -0.06533536, y: -0.17340305}
+  - {x: -0.18674475, y: -0.20591433}
+  - {x: -0.4108117, y: -0.3002743}
+  - {x: -0.6150985, y: -0.46041507}
+  - {x: -0.68933874, y: -0.5355947}
+  - {x: -0.77636796, y: -0.539523}
+  - {x: -0.81378376, y: -0.55402726}
+  - {x: -0.8877569, y: -0.5931005}
+  - {x: -0.9432406, y: -0.6722929}
+  - {x: -0.9067288, y: -0.7470156}
+  - {x: -0.84882784, y: -0.7987342}
+  - {x: -0.8247089, y: -0.84105444}
+  - {x: -0.827018, y: -0.8820234}
+  - {x: -0.8989147, y: -0.93102765}
+  - {x: -0.96494246, y: -0.91523904}
+  - {x: -1.0492216, y: -0.77011037}
+  - {x: -1.1549137, y: -0.69670296}
+  - {x: -1.195197, y: -0.64228714}
+  - {x: -1.8030124, y: -0.92624724}
+  - {x: -1.8825734, y: -1.0314252}
+  - {x: -1.9063443, y: -1.1279927}
+  - {x: -1.9825554, y: -1.1109113}
+  - {x: -2.0685205, y: -1.0266184}
+  - {x: -2.1112494, y: -0.9460364}
+  - {x: -2.1137598, y: -0.85804063}
+  - {x: -2.1078846, y: -0.7923724}
+  - {x: -2.0868177, y: -0.7445702}
+  - {x: -2.0264473, y: -0.74746513}
+  - {x: -1.9674399, y: -0.77551574}
+  - {x: -1.8910913, y: -0.7663873}
+  - {x: -1.289722, y: -0.47104144}
+  - {x: -1.3013486, y: -0.38682213}
+  - {x: -1.2952669, y: -0.24297564}
+  - {x: -1.3527302, y: -0.11164569}
+  - {x: -1.322419, y: -0.050343722}
+  - {x: -1.2426487, y: -0.039037526}
+  - {x: -1.2080146, y: -0.057874344}
+  - {x: -1.1809525, y: -0.21487117}
+  - {x: -1.1569551, y: -0.24836189}
+  - {x: -1.1222416, y: -0.24618179}
+  - {x: -1.0990305, y: -0.24738938}
+  - {x: -1.0675143, y: -0.24353154}
+  - {x: -1.055464, y: -0.2453833}
+  - {x: -1.0131496, y: -0.22970365}
+  - {x: -0.9569649, y: -0.19929907}
+  - {x: -0.89655066, y: -0.12798123}
+  - {x: -0.7811447, y: -0.11257368}
+  - {x: -0.56863546, y: -0.034481462}
+  - {x: -0.36020058, y: 0.062721744}
+  - {x: -0.2333295, y: 0.16265196}
+  - {x: -0.13260525, y: 0.21241549}
+  - {x: -0.09057542, y: 0.23041275}
+  - {x: 0.036240406, y: 0.28559718}
+  - {x: 1.8410481, y: 1.1206696}
+  - {x: 1.9654872, y: 1.1458514}
+  - {x: 2.022386, y: 1.1481593}
+  - {x: 2.0797205, y: 1.1473185}
+  - {x: 2.1210902, y: 1.1376187}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &875569058
 GameObject:
   m_ObjectHideFlags: 0
@@ -94082,8 +94138,8 @@ MonoBehaviour:
   - {fileID: 297105123}
   - {fileID: 791501754}
   - {fileID: 1775724606}
-  maxEnemies: 20
-  spawnInterval: 1
+  maxEnemies: 40
+  spawnInterval: 0.5
 --- !u!1 &1358583494
 GameObject:
   m_ObjectHideFlags: 0
@@ -135948,7 +136004,6 @@ GameObject:
   - component: {fileID: 1695096532}
   - component: {fileID: 1695096531}
   - component: {fileID: 1695096530}
-  - component: {fileID: 1695096529}
   m_Layer: 0
   m_Name: Vitoria
   m_TagString: Untagged
@@ -135956,18 +136011,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1695096529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695096528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 348ed311d0d82e942b593237326bd930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1695096530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136508,7 +136551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471940709282910963, guid: b429f3cad1c9e864a98c06101918acd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.58
+      value: -9.81
       objectReference: {fileID: 0}
     - target: {fileID: 471940709282910963, guid: b429f3cad1c9e864a98c06101918acd8, type: 3}
       propertyPath: m_LocalPosition.y

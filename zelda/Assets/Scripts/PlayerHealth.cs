@@ -7,11 +7,11 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
-    [Header("Sistema de Cura")]
+    
     public int healAmount = 25;
     public int healthPotions = 3;
 
-    [Header("UI")]
+
     public TMP_Text healthText;
 
     void Start()

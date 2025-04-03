@@ -77,7 +77,6 @@ public class EnemyAttack : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Inimigo morreu!");
         Destroy(gameObject);
     }
 

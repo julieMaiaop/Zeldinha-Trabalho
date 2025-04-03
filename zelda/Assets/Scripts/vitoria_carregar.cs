@@ -6,6 +6,10 @@ public class vitoria_carregar : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("vitoria");
+        
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Vitoria");
+        }
     }
 }

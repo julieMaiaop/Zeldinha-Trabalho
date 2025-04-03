@@ -15,7 +15,8 @@ public class Menu : MonoBehaviour
     }
     public void FecharJogo ()
     {
-
+      Application.Quit ();
+        Debug.Log("Fechou jogo");
     }
 
 }
